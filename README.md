@@ -16,7 +16,7 @@ interacting with board spaces through pointer-based movement.
 - The Monopoly board has a maximum of **40 spaces**.
 - Your linked list must **never exceed 40 nodes**.
 - Once the board reaches capacity, additional insertions must be rejected cleanly
-**without corrupting the list**.
+  **without corrupting the list**.
 ---
 ## Board Construction Policy (Read This Carefully)
 Spaces are added during a **board construction phase**, before gameplay begins.
@@ -24,8 +24,8 @@ How you build the board is intentionally **left to you**. You may:
 - Define each space manually in code.
 - Load spaces from a file.
 - Generate spaces programmatically (including random generation).
-There is **no single required way** to construct the board. The requirement is that
-your implementation:
+  There is **no single required way** to construct the board. The requirement is that
+  your implementation:
 - Supports adding spaces using the provided insertion functions.
 - Correctly enforces the 40-space limit.
 - Preserves circular integrity regardless of construction strategy.
@@ -66,7 +66,7 @@ Your `main.cpp` must demonstrate a simple playable traversal loop:
 - Move the player.
 - Print the space landed on.
 - Track how many times the player passes GO.
-This is **not** a full Monopoly game. The goal is to prove traversal correctness.
+  This is **not** a full Monopoly game. The goal is to prove traversal correctness.
 ---
 ## Advanced Requirements (20 points total)
 Choose **one** of the following paths.
