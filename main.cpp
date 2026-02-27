@@ -25,7 +25,10 @@ public:
 
     MonopolySpace(string propertyName, string propertyColor, int value, int rent) {
         /* TODO: Define overloaded constructor here */
-        MonopolySpace(propertyName, propertyColor, value, rent);
+        this->propertyName = propertyName;
+        this->propertyColor = propertyColor;
+        this->value = value;
+        this->rent = rent;
     }
 
     bool isEqual(MonopolySpace other) {
@@ -40,9 +43,9 @@ public:
         // cout << propertyName << " | " << propertyColor << " | $" << value << " | Rent
         // << rent;
         cout << propertyName << " | "
-        << propertyColor << " | $"
-        << value << " | Rent "
-        << rent << endl;
+                << propertyColor << " | $"
+                << value << " | Rent "
+                << rent << endl;
     }
 };
 
@@ -117,8 +120,7 @@ public:
             playerNode = newNode;
 
             newNode->nextNode = newNode;
-        }
-        else {
+        } else {
             tailNode->nextNode = newNode;
             tailNode = newNode;
             tailNode->nextNode = headNode;
@@ -157,7 +159,7 @@ public:
             return;
         }
 
-        for (int i=0; i<steps; i++) {
+        for (int i = 0; i < steps; i++) {
             if (playerNode == tailNode) {
                 passGoCount++;
             }
@@ -186,7 +188,7 @@ public:
 
         Node<T> *temp = playerNode;
 
-        for (int i=0; i<count; i++) {
+        for (int i = 0; i < count; i++) {
             temp->data.print();
             temp = temp->nextNode;
         }
@@ -202,9 +204,9 @@ public:
             return;
         }
 
-        Node<T>* temp = headNode;
+        Node<T> *temp = headNode;
 
-        for (int i=0; i<nodeCount; i++) {
+        for (int i = 0; i < nodeCount; i++) {
             temp->data.print();
             temp = temp->nextNode;
         }
@@ -223,7 +225,49 @@ public:
         // - Maintain circular link tail->next=head
         // - If playerNode points to deleted node, move playerNode to a safe node
         // - nodeCount--
-        cout << "removeByName unwritten" << endl;
+
+        // makes sure its not empty
+        if (headNode == nullptr) {
+            return false;
+        }
+
+        Node<T> *currentNode = headNode;
+        Node<T> *previousNode = tailNode;
+
+        for (int i = 0; i < nodeCount; i++) {
+            if (currentNode->data.propertyName() == name) {
+                if (nodeCount == 1) {
+                    delete currentNode;
+                    headNode = nullptr;
+                    tailNode = nullptr;
+                    playerNode = nullptr;
+                } else {
+                    if (currentNode == headNode) {
+                        headNode = headNode->nextNode;
+                        tailNode->nextNode = headNode;
+                    }
+
+                    if (currentNode == tailNode) {
+                        tailNode = previousNode;
+                        tailNode->nextNode = headNode;
+                    }
+
+                    previousNode->nextNode = currentNode->nextNode;
+
+                    if (playerNode == currentNode) {
+                        playerNode = currentNode->nextNode;
+                    }
+
+                    delete currentNode;
+                }
+
+                nodeCount--;
+                return true;
+            }
+            previousNode = currentNode;
+            currentNode = currentNode->nextNode;
+        }
+
         return false;
     }
 
@@ -282,8 +326,10 @@ int rollDice2to12() {
     return (rand() % 6 + 1) + (rand() % 6 + 1);
 }
 
+
 int main() {
     srand(static_cast<unsigned>(time(nullptr)));
+
     CircularLinkedList<MonopolySpace> board;
     // -------------------------------
     // Board Construction Phase
@@ -321,5 +367,22 @@ int main() {
     //
     // Option B example:
     // board.mirrorBoard();
+
+    /*
+    CircularLinkedList<MonopolySpace> board;
+
+    board.addSpace(MonopolySpace("GO", "None", 0, 0));
+    board.addSpace(MonopolySpace("A", "Red", 100, 10));
+    board.addSpace(MonopolySpace("B", "Blue", 120, 12));
+    board.addSpace(MonopolySpace("C", "Green", 150, 15));
+
+    cout << "=== TEST 3: Move Player 1 Step ===" << endl;
+
+    board.movePlayer(1);
+    board.printFromPlayer(1);
+
+    return 0;
+    */
+
     return 0;
 }
