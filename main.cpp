@@ -139,8 +139,21 @@ public:
         // - Stop exactly when you reach MAX_SPACES
         // - Return number successfully added
         // - Do not corrupt pointers if capacity is exceeded
-        cout << "addMany unwritten" << endl;
-        return 0;
+
+        int totalAddedSpaces = 0;
+
+        for (int i=0; i<values.size(); i++) {
+            if (nodeCount == MAX_SPACES) {
+                break;
+            }
+
+            bool win = addSpace(values[i]);
+
+            if (win) {
+                totalAddedSpaces++;
+            }
+        }
+        return totalAddedSpaces;
     }
 
     // -------------------------------
