@@ -316,8 +316,19 @@ public:
         // TODO:
         // - Must be O(n), traverse exactly once with correct stop condition
         // - Do NOT rely on nodeCount for this method
-        cout << "countSpaces unwritten" << endl;
-        return 0;
+        if (headNode == nullptr) {
+            return 0;
+        }
+
+        int count = 0;
+        Node<T> *currentNode = headNode;
+
+        do {
+            count++;
+            currentNode = currentNode->nextNode;
+        } while (currentNode != headNode);
+
+        return count;
     }
 
     // -------------------------------
