@@ -167,12 +167,14 @@ public:
         // increment passGoCount when a move crosses from tail back to head
         // - Must handle empty list safely
 
-        if (playerNode == nullptr) {
+        if (playerNode == nullptr || nodeCount == 0) {
             cout << "Board is empty." << endl;
             return;
         }
 
-        for (int i = 0; i < steps; i++) {
+        int actualSteps = steps % nodeCount;
+
+        for (int i=0; i<actualSteps; i++) {
             if (playerNode == tailNode) {
                 passGoCount++;
             }
