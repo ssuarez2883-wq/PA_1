@@ -31,10 +31,13 @@ public:
         this->rent = rent;
     }
 
-    bool isEqual(MonopolySpace other) {
+    bool isEqual(const MonopolySpace& other) {
         /* TODO: Define isEqual here (compare by name is fine if you enforce
         uniqueness) */
-        return propertyName == other.propertyName && propertyColor == other.propertyColor && value == other.value;
+        return propertyName == other.propertyName &&
+            propertyColor == other.propertyColor &&
+                value == other.value &&
+                    rent == other.rent;
     }
 
     void print() {

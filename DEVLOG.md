@@ -20,24 +20,24 @@ Each entry may be one of the following:
 - Why you chose one approach over another (tradeoffs).
 ---
 ### Entry 1
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
-**Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**Date:2026-03-03
+**Entry Type: Engineering Decision
+**Task worked on: movePlayer(int steps)
+**Issue or decision: Possibility of redundant looping
+**Error message / symptom (if applicable): N/A
+**What I tried: Modulus Operator
+**Fix / resolution (or final decision): Use modulu operator within a new variable to lessen the extent of the for loop.
+**Commit(s): Made movePlayer() method better/more efficient by reducing redundant traversal (when doing full 360).
 ---
 ### Entry 2
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
-**Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**Date:2026-03-05
+**Entry Type: Bug Fix 
+**Task worked on: isEqual(MonopolySpace other)
+**Issue or decision:(MonopolySpace other) would copy the entire thing
+**Error message / symptom (if applicable): unnecessary copying
+**What I tried: pass parameter as const and add &
+**Fix / resolution (or final decision): other is now unmodifiable and easier to compare
+**Commit(s): Improved isEqual(MonopolySpace other) by making the parameter unmodifiable and const. Also updated DEVLOG entries 1 & 2.
 ---
 ### Entry 3
 **Date:** YYYY-MM-DD
