@@ -294,8 +294,24 @@ public:
         // - Traverse ring exactly once
         // - Collect matching names in vector<string>
         // - Return matches
-        cout << "findByColor unwritten" << endl;
+
         vector<string> matches;
+
+        if (headNode == nullptr) {
+            return matches;
+        }
+
+        Node<T> *currentNode = headNode;
+
+        do {
+            if (currentNode-> data.propertyColor == color) {
+                matches.push_back(currentNode->data.propertyName());
+            }
+
+            currentNode = currentNode->nextNode;
+
+        } while (currentNode != headNode);
+
         return matches;
     }
 
