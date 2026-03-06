@@ -206,7 +206,9 @@ public:
 
         Node<T> *temp = playerNode;
 
-        for (int i = 0; i < count; i++) {
+        int limit = min(count, nodeCount);
+
+        for (int i = 0; i < limit; i++) {
             temp->data.print();
             temp = temp->nextNode;
         }

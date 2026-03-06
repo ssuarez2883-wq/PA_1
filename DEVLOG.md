@@ -40,14 +40,14 @@ Each entry may be one of the following:
 **Commit(s): Improved isEqual(MonopolySpace other) by making the parameter unmodifiable and const. Also updated DEVLOG entries 1 & 2.
 ---
 ### Entry 3
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
-**Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**Date:** 2026-03-05
+**Entry Type: Edge Case
+**Task worked on: printFromPlayer()
+**Issue or decision: extra nodes printing
+**Error message / symptom (if applicable): N/A
+**What I tried: using minimum function
+**Fix/resolution (or final decision):min(count, nodeCount)
+**Commit(s):  Added safety limit in printFromPlayer() function to avoid printing more nodes than meant to.
 ---
 ### Entry 4
 **Date:** YYYY-MM-DD
