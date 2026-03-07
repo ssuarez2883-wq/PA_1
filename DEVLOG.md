@@ -48,7 +48,7 @@ Each entry may be one of the following:
 **What I tried: using minimum function
 **Fix/resolution (or final decision):min(count, nodeCount)
 **Commit(s):  Added safety limit in printFromPlayer() function to avoid printing more nodes than meant to.
----
+--- 
 ### Entry 4
 **Date:** YYYY-MM-DD
 **Entry Type:** Bug Fix / Edge Case / Engineering Decision

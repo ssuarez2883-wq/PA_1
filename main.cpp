@@ -362,7 +362,22 @@ public:
         // - Safely delete all nodes
         // - Tip: if tailNode exists, break the cycle first: tailNode->nextNode = nullptr
         // - Then delete like a normal singly linked list
-        cout << "clear unwritten" << endl;
+        if (headNode == nullptr) {
+            return;
+        }
+
+        tailNode->nextNode = headNode;
+
+        while (currentNode != nullptr) {
+            Node<T> *temp = currentNode;
+            currentNode = currentNode->nextNode;
+            delete temp;
+        }
+
+        headNode = nullptr;
+        tailNode = nullptr;
+        playerNode = nullptr;
+        nodeCount = 0;
     }
 };
 
