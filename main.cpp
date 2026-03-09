@@ -255,7 +255,7 @@ public:
         Node<T> *previousNode = tailNode;
 
         for (int i = 0; i < nodeCount; i++) {
-            if (currentNode->data.propertyName() == name) {
+            if (currentNode->data.propertyName == name) {
                 if (nodeCount == 1) {
                     delete currentNode;
                     headNode = nullptr;
@@ -310,7 +310,7 @@ public:
 
         do {
             if (currentNode-> data.propertyColor == color) {
-                matches.push_back(currentNode->data.propertyName());
+                matches.push_back(currentNode->data.propertyName);
             }
 
             currentNode = currentNode->nextNode;
@@ -366,7 +366,9 @@ public:
             return;
         }
 
-        tailNode->nextNode = headNode;
+        tailNode->nextNode = nullptr;
+
+        Node<T> *currentNode = headNode;
 
         while (currentNode != nullptr) {
             Node<T> *temp = currentNode;
@@ -409,6 +411,12 @@ int main() {
     // NOTE: This starter calls addSpace once to show the intended API,
     // but your final submission should build a meaningful board.
     board.addSpace(MonopolySpace("GO", "None", 0, 0));
+    board.addSpace(MonopolySpace("SDSU", "Pink", 500, 50));
+    board.addSpace(MonopolySpace("Chicfila", "Blue", 60, 5));
+    board.addSpace(MonopolySpace("Taco bell", "Pink", 60, 5));
+    board.addSpace(MonopolySpace("In-N-Out", "Blue", 60, 6));
+    board.addSpace(MonopolySpace("Home", "Red", 100, 3));
+    board.addSpace(MonopolySpace("Jail", "White", 0, 0));
     // -------------------------------
     // Playable Traversal Loop
     // -------------------------------

@@ -50,31 +50,31 @@ Each entry may be one of the following:
 **Commit(s):  Added safety limit in printFromPlayer() function to avoid printing more nodes than meant to.
 --- 
 ### Entry 4
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
+**Date:** 2026-03-05
+**Entry Type:** Bug Fix
+**Task worked on: clear()
+**Issue or decision: list is still linked
 **Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**What I tried: breaking the link
+**Fix / resolution (or final decision): tailNode->nextNode = nullptr
+**Commit(s): Fixed clear() to break circular link
 ---
 ### Entry 5
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
-**Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**Date:** 2026-03-08
+**Entry Type:** Bug Fix
+**Task worked on: findByColor(string color)
+**Issue or decision: propertyName()
+**Error message/symptom (if applicable):**
+**What I tried:Changing comparison object to data field
+**Fix / resolution (or final decision):propertyName
+**Commit(s):Fixed propertyName comparison bug in findByColor(string color) method
 ---
 ### Entry 6
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
-**Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**Date:** 2026-03-08
+**Entry Type:Bug Fix
+**Task worked on: removeByName()
+**Issue or decision: propertyName()
+**Error message/symptom (if applicable):**
+**What I tried: Changing comparison object to data field
+**Fix / resolution (or final decision):propertyName
+**Commit(s): Fixed propertyName comparison bug in removeByName()
